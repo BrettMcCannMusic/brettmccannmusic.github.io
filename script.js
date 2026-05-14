@@ -1,6 +1,23 @@
 const gigs = document.querySelectorAll('.gig');
 
+/* remove old gigs */
+
+const today = new Date();
+
+gigs.forEach((gig) => {
+
+  const gigDate = new Date(gig.dataset.date);
+
+  if (gigDate < today) {
+    gig.remove();
+  }
+
+});
+
+/* scroll reveal */
+
 const observer = new IntersectionObserver((entries) => {
+
   entries.forEach((entry) => {
 
     if (entry.isIntersecting) {
@@ -8,8 +25,9 @@ const observer = new IntersectionObserver((entries) => {
     }
 
   });
+
 }, {
-  threshold: 0.1
+  threshold: 0.15
 });
 
 gigs.forEach((gig) => {
