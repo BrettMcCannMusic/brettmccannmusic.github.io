@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cooper+Hewitt:wght@400;700&family=Fraunces:opsz,wght@9..144,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ultra&family=Fraunces:opsz,wght@9..144,600&display=swap');
 
 * {
   margin: 0;
@@ -7,10 +7,40 @@
 }
 
 body {
-  background-color: #1a1a1a;
+  background-color: #1c1c1c;
   color: #f5f5f5;
   font-family: 'Helvetica Neue', sans-serif;
 }
+
+/* fade-in animation */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title-section,
+.image-section,
+.gigs-section {
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.image-section {
+  animation-delay: 0.2s;
+}
+
+.gigs-section {
+  animation-delay: 0.4s;
+}
+
+/* header */
 
 .title-section {
   text-align: center;
@@ -19,18 +49,20 @@ body {
 }
 
 .title-section h1 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(4rem, 10vw, 8rem);
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  color: #f8f8f8;
+  font-family: 'Ultra', serif;
+  font-size: clamp(4.5rem, 11vw, 8.5rem);
+  letter-spacing: -0.03em;
+  color: #f5f5f5;
+  line-height: 0.95;
 }
+
+/* image */
 
 .image-section {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-bottom: 80px;
+  padding-bottom: 90px;
 }
 
 .image-section img {
@@ -38,8 +70,10 @@ body {
   max-width: 1100px;
   height: auto;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 3px;
 }
+
+/* gigs */
 
 .gigs-section {
   width: 85%;
@@ -49,12 +83,12 @@ body {
 }
 
 .gigs-section h2 {
-  font-size: 1.0rem;
+  font-family: 'Ultra', serif;
+  font-size: 2rem;
   text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-bottom: 40px;
-  opacity: 0.6;
+  color: #f5f5f5;
+  margin-bottom: 50px;
+  letter-spacing: -0.02em;
 }
 
 .gig {
@@ -63,7 +97,7 @@ body {
   padding: 24px 0;
   border-bottom: 1px solid rgba(255,255,255,0.1);
   font-size: 1.1rem;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.25s ease;
 }
 
 .gig:hover {
@@ -83,6 +117,10 @@ body {
   .gig {
     flex-direction: column;
     gap: 8px;
+  }
+
+  .gigs-section h2 {
+    font-size: 1.6rem;
   }
 
 }
