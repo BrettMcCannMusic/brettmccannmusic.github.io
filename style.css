@@ -142,7 +142,7 @@ display: flex;
   font-size: 1.08rem;
 
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(20px);
 
   transition:
     opacity 1.2s ease,
