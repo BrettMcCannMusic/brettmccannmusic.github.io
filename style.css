@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ultra&family=Fraunces:opsz,wght@9..144,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&family=Instrument+Serif&display=swap');
 
 * {
   margin: 0;
@@ -7,17 +7,17 @@
 }
 
 body {
-  background-color: #1c1c1c;
+  background-color: #1b1b1b;
   color: #f5f5f5;
   font-family: 'Helvetica Neue', sans-serif;
 }
 
-/* fade-in animation */
+/* overall cinematic fade */
 
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(25px);
+    transform: translateY(35px);
   }
 
   to {
@@ -26,88 +26,108 @@ body {
   }
 }
 
-.title-section,
-.image-section,
-.gigs-section {
-  animation: fadeUp 1.2s ease forwards;
-}
-
-.image-section {
-  animation-delay: 0.2s;
-}
-
-.gigs-section {
-  animation-delay: 0.4s;
-}
-
-/* header */
+/* page sections */
 
 .title-section {
   text-align: center;
-  padding-top: 80px;
-  padding-bottom: 50px;
-}
+  padding-top: 90px;
+  padding-bottom: 55px;
 
-.title-section h1 {
-  font-family: 'Ultra', serif;
-  font-size: clamp(4.5rem, 11vw, 8.5rem);
-  letter-spacing: -0.03em;
-  color: #f5f5f5;
-  line-height: 0.95;
+  opacity: 0;
+  animation: fadeUp 1.8s ease forwards;
 }
-
-/* image */
 
 .image-section {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-bottom: 90px;
-}
+  padding-bottom: 100px;
 
-.image-section img {
-  width: 85%;
-  max-width: 1100px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 3px;
+  opacity: 0;
+  animation: fadeUp 2s ease forwards;
+  animation-delay: 0.5s;
 }
-
-/* gigs */
 
 .gigs-section {
   width: 85%;
   max-width: 1000px;
   margin: auto;
   padding-bottom: 120px;
+
+  opacity: 0;
+  animation: fadeUp 2s ease forwards;
+  animation-delay: 1s;
 }
 
-.gigs-section h2 {
-  font-family: 'Ultra', serif;
-  font-size: 2rem;
-  text-align: center;
+/* heading */
+
+.title-section h1 {
+  font-family: 'Shrikhand', serif;
+  font-size: clamp(4.5rem, 11vw, 8.5rem);
+  font-weight: 400;
   color: #f5f5f5;
-  margin-bottom: 50px;
+  line-height: 0.95;
   letter-spacing: -0.02em;
 }
+
+/* hero image */
+
+.image-section img {
+  width: 85%;
+  max-width: 1100px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* upcoming shows */
+
+.gigs-section h2 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 2.2rem;
+  text-align: center;
+  color: #f5f5f5;
+  margin-bottom: 60px;
+  letter-spacing: -0.02em;
+}
+
+/* gigs */
 
 .gig {
   display: flex;
   justify-content: space-between;
-  padding: 24px 0;
+  padding: 26px 0;
   border-bottom: 1px solid rgba(255,255,255,0.1);
-  font-size: 1.1rem;
-  transition: opacity 0.25s ease;
+  font-size: 1.08rem;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1.4s ease forwards;
 }
+
+/* staggered gig reveals */
+
+.gig:nth-child(2) { animation-delay: 1.2s; }
+.gig:nth-child(3) { animation-delay: 1.5s; }
+.gig:nth-child(4) { animation-delay: 1.8s; }
+.gig:nth-child(5) { animation-delay: 2.1s; }
+.gig:nth-child(6) { animation-delay: 2.4s; }
+.gig:nth-child(7) { animation-delay: 2.7s; }
+.gig:nth-child(8) { animation-delay: 3s; }
+.gig:nth-child(9) { animation-delay: 3.3s; }
+.gig:nth-child(10) { animation-delay: 3.6s; }
 
 .gig:hover {
   opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
+
+/* mobile */
 
 @media (max-width: 700px) {
 
   .title-section {
-    padding-top: 60px;
+    padding-top: 65px;
   }
 
   .image-section img {
@@ -120,7 +140,7 @@ body {
   }
 
   .gigs-section h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
 }
