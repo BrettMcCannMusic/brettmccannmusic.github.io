@@ -3,12 +3,17 @@ const gigs = document.querySelectorAll('.gig');
 /* remove old gigs */
 
 const today = new Date();
+today.setHours(0, 0, 0, 0);
 
 gigs.forEach((gig) => {
 
   const gigDate = new Date(gig.dataset.date);
+  gigDate.setHours(0, 0, 0, 0);
 
-  if (gigDate < today) {
+  const tomorrow = new Date(today);
+  tomorrow.setDate(today.getDate() - 1);
+
+  if (gigDate < tomorrow) {
     gig.remove();
   }
 
