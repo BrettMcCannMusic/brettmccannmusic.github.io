@@ -10,10 +10,13 @@ gigs.forEach((gig) => {
   const gigDate = new Date(gig.dataset.date);
   gigDate.setHours(0, 0, 0, 0);
 
-  const tomorrow = new Date(today);
-  tomorrow.setDate(today.getDate() - 1);
+  /* add one full day to gig date */
 
-  if (gigDate < tomorrow) {
+  gigDate.setDate(gigDate.getDate() + 1);
+
+  /* remove once the NEXT day begins */
+
+  if (gigDate <= today) {
     gig.remove();
   }
 
